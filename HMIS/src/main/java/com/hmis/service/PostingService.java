@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.hmis.domain.PostingVO;
 import com.hmis.domain.SearchCriteria;
-import com.hmis.domain.UserVO;
 import com.hmis.dto.RecommandDTO;
 
 /**

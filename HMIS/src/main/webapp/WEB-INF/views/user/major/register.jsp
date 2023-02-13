@@ -416,10 +416,10 @@ body[data-layout=detached] .wrapper {
                        send_cnt++;
                }
                
-               if(send_cnt == 0){
+               /* if(send_cnt == 0){
                   alert("과목을 추가해주세요.");
                   return false;
-               }
+               } */
 
                $("#arrayMajor").val(send_array);
                

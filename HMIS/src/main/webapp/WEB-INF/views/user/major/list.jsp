@@ -181,7 +181,7 @@ body[data-layout=detached] .wrapper {
 
   </body>
 <script>
-var msg = "${msg}";
+var msg = "등록되었습니다.";
 
 if(msg != ""){
 	alert(msg);

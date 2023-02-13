@@ -48,9 +48,9 @@ public class RecommandController {
 
 		int num = 5;
 		int postingId = recommand.getPostingId();
-
-		String Url = "http://127.0.0.1:5000/topNHrs?num=" + num + "&jobID=" + postingId;
-
+			
+			String Url = "http://127.0.0.1:5000/topNHrs?num=" + num + "&jobID=" + postingId;
+			
 		// Url = "http://127.0.0.1:5000/topNHrs";
 		// Url = "http://127.0.0.1:5000/topNHrs?num=5&jobID=500";
 
@@ -135,5 +135,5 @@ public class RecommandController {
 		}
 
 	}
-
+	
 }

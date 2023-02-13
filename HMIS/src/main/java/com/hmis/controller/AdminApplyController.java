@@ -38,7 +38,7 @@ public class AdminApplyController {
 	public void list(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("Admin Apply List Form.....");
 		logger.info(cri.toString());
-
+ 
 		model.addAttribute("allList", service.adApplyList(cri));
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);

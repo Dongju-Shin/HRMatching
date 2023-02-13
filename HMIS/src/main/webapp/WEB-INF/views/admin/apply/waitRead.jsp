@@ -75,7 +75,8 @@ td, th {
 								<div class="page-title-right">
 									<ol class="breadcrumb m-0">
 										<li class="breadcrumb-item"><a href="/admin/main">HMIS</a></li>
-										<li class="breadcrumb-item"><a href="/admin/apply/list">승인대기 목록</a></li>
+										<li class="breadcrumb-item"><a href="/admin/apply/list">승인대기
+												목록</a></li>
 										<li class="breadcrumb-item active">자격증 신청 상세보기</li>
 									</ol>
 								</div>
@@ -86,7 +87,7 @@ td, th {
 					<!-- end page title -->
 
 
-					<form name="frm" role="form" >
+					<form name="frm" role="form">
 
 						<input type='hidden' name='applyNo' value="${applyVO.applyNo}">
 						<input type='hidden' name='page' value="${cri.page}"> <input
@@ -124,54 +125,53 @@ td, th {
 												<label for="inputEmail4" class="col-form-label">분류</label> <input
 													type="text" name="categ" id="categ"
 													value="${applyVO.categ}" class="form-control"
-													readonly="readonly" >
+													readonly="readonly">
 											</div>
 											<div class="form-group col-md-6">
 												<label for="inputPassword4" class="col-form-label">영역</label>
 												<input type="text" name="area" id="area"
 													value="${applyVO.area}" class="form-control"
-													readonly="readonly" >
+													readonly="readonly">
 											</div>
 										</div>
 
 										<div class="form-row">
 											<div class="form-group col-md-6">
-											
-											<input type="hidden" name="subNo" id="subNo" value=0>
-											<input type="hidden" name="guide" id="guide">
-											
-												<label for="inputEmail4" class="col-form-label">항목명</label>
+
+												<input type="hidden" name="subNo" id="subNo" value=0>
+												<input type="hidden" name="guide" id="guide"> <label
+													for="inputEmail4" class="col-form-label">항목명</label>
 												<div class="input-group">
 													<input type="text" class="form-control" name="subName"
 														id="subName" value="${applyVO.subName}"
-														readonly="readonly" >
+														readonly="readonly">
 												</div>
 												<span class="caret"> * 항목 수정 하실 경우 검색 버튼 클릭해주세요.</span>
-													<div style="text-align: right;">
-														<button class="btn btn-info" type="button" id="subPopup">검색</button>
-													</div>												
+												<div style="text-align: right;">
+													<button class="btn btn-info" type="button" id="subPopup">검색</button>
+												</div>
 											</div>
 											<div class="form-group col-md-6">
 												<label for="inputPassword4" class="col-form-label">취득
 													점수</label> <input type="text" name="acScore" id="acScore"
 													class="form-control" value="${applyVO.acScore}"
-													readonly="readonly" >
+													readonly="readonly">
 											</div>
 										</div>
 
 										<div class="form-row">
-											<div class="form-group col-md-6" style="visibility:hidden">
+											<div class="form-group col-md-6" style="visibility: hidden">
 												<label for="inputEmail4" class="col-form-label">-</label>
 												<div class="input-group">
 													<input type="text" class="form-control" name="subName1"
-														id="subName1" readonly="readonly" >
+														id="subName1" readonly="readonly">
 												</div>
 											</div>
 											<div class="form-group col-md-6">
 												<label for="inputPassword4" class="col-form-label">환산
 													점수</label> <input type="text" name="acScore1" id="acScore1"
 													class="form-control" value="${applyVO.conversionScore}"
-													readonly="readonly" >
+													readonly="readonly">
 											</div>
 										</div>
 
@@ -292,38 +292,43 @@ td, th {
 										</c:if>
 										<c:if test="${empty fileVO}">
 										</c:if>
-										
+
 										<c:if test="${applyVO.applyState eq '승인대기'}">
-										<div class="form-row">
-											<div class="form-group col-md-6">
-												<label for="inputAddress2" class="col-form-label">결재자</label>
-												<input type="text" name="approver" id="approver" class="form-control" value="${login.userName}" disabled="disabled">
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label for="inputAddress2" class="col-form-label">결재자</label>
+													<input type="text" name="approver" id="approver"
+														class="form-control" value="${login.userName}"
+														disabled="disabled">
+												</div>
+												<div class="form-group col-md-6">
+													<label for="inputAddress2" class="col-form-label">결재일자</label>
+													<input type="text" name="approvalDate" id="approvalDate"
+														class="form-control" disabled="disabled">
+												</div>
 											</div>
-											<div class="form-group col-md-6">
-												<label for="inputAddress2" class="col-form-label">결재일자</label>
-												<input type="text" name="approvalDate" id="approvalDate" class="form-control" disabled="disabled">
-											</div>
-										</div>
 
 										</c:if>
 
 										<div style="text-align: right;">
-											<c:if test="${applyVO.applyState eq '승인대기' and empty originalLogVO}">
+											<c:if
+												test="${applyVO.applyState eq '승인대기' and empty originalLogVO}">
 												<button type="button" class="btn btn-danger">거절</button>
-												<button type="button" class="btn btn-secondary" >원본확인</button>
-												<button type="button" class="btn btn-success" style="color:black" disabled="disabled">승인</button>
+												<button type="button" class="btn btn-secondary">원본확인</button>
+												<button type="button" class="btn btn-success" style="color: black" disabled="disabled">승인</button>
 											</c:if>
-											<c:if test="${applyVO.applyState eq '승인대기' and !empty originalLogVO}">
+											<c:if
+												test="${applyVO.applyState eq '승인대기' and !empty originalLogVO}">
 												<button type="button" class="btn btn-danger">거절</button>
-												<button type="button" class="btn btn-secondary" style="color:black" disabled="disabled">원본확인</button>
-												<button type="button" class="btn btn-success" >승인</button>
+												<button type="button" class="btn btn-secondary" style="color: black" disabled="disabled">원본확인</button>
+												<button type="button" class="btn btn-success">승인</button>
 											</c:if>
 											<c:if test="${applyVO.applyState eq '거절'}">
 												<button type="button" class="btn btn-warning">승인대기</button>
-											</c:if>		
+											</c:if>
 											<c:if test="${applyVO.applyState eq '승인'}">
 												<button type="button" class="btn btn-warning">승인대기</button>
-											</c:if>												
+											</c:if>
 											<button type="button" class="btn btn-primary">목록</button>
 										</div>
 
@@ -386,8 +391,6 @@ td, th {
 
 
 	<script>
-	
-	
 		$(document).ready(function() {
 			$("#detached-check input:radio").click(function() {
 
@@ -443,13 +446,13 @@ td, th {
 				formObj.attr("action", "/admin/apply/check?mapping=waitRead");
 				formObj.attr("method", "post");
 				formObj.submit();
-			});			
+			});
 			$(".btn-warning").on("click", function() {
 				formObj.attr("action", "/admin/apply/standBy?mapping=read");
 				formObj.attr("method", "post");
 				formObj.submit();
-			});			
-			
+			});
+
 			$(".btn-danger").on("click", function() {
 				formObj.attr("action", "/admin/apply/deny?mapping=waitList");
 				formObj.attr("method", "post");
@@ -471,13 +474,15 @@ td, th {
 			return fileName.match(pattern);
 
 		}
-		
-		$("#subPopup").click(function(){
-			var url = "/user/apply/searchPopup";
-		    var name = "항목 검색";
-		    var option = "width = 700, height = 500, top = 100, left = 200, location = no";
-		    window.open(url, name, option);
-		});		
+
+		$("#subPopup")
+				.click(
+						function() {
+							var url = "/user/apply/searchPopup";
+							var name = "항목 검색";
+							var option = "width = 700, height = 500, top = 100, left = 200, location = no";
+							window.open(url, name, option);
+						});
 	</script>
 
 </body>
